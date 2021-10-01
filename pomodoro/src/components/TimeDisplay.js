@@ -18,7 +18,7 @@ const TimeDisplay = ({ time, status, progress}) => {
                     stroke = "#ddd"
                     fill = "#fff"
                     strokeWidth = {stroke}
-                    r = {nor}
+                    r = {normalizedRadius}
                 >
                 </circle>
             </svg>
