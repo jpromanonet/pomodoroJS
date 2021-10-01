@@ -34,6 +34,6 @@
 
 .TypeSelect button.active {
     background: #fff;
-    color: #D9534F
+    color: #D9534F;
     box-shadow: 0 3px 10px rgba(0, 0, 0, .12);
 }
