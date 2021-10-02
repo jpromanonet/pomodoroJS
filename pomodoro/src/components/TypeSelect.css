@@ -1,0 +1,11 @@
+.TypeSelect {
+    width: 400px;
+    display: flex;
+}
+
+@media screen and (max-width: 500px) {
+    .TypeSelect {
+        width: 100%;
+    }
+}
+
