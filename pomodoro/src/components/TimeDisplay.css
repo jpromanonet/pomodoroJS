@@ -1,0 +1,22 @@
+.TypeDisplay {
+    position: relative;
+}
+
+.TimeDisplay svg {
+    max-width: 300px;
+}
+
+.TimeDisplay circle {
+    transition: stroke-dashoffset 1s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.TimeDisplay > div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -32px);
+    text-align: center;
+}
+
