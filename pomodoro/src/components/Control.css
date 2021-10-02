@@ -1,0 +1,11 @@
+.Controls, .Controls div {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.Controls button {
+    height: 40px;
+    border-radius: 40px;
+    border: 0;
+}
