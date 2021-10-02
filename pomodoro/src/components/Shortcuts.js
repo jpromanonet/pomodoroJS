@@ -42,4 +42,4 @@ const Shortcuts = () => (
     </div>
 );
 
-export default memo(Shortcuts)
+export default memo(Shortcuts);
