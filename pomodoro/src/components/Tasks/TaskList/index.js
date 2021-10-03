@@ -54,7 +54,39 @@ const TaskList = ({ selectedTaskType }) => {
     
     return(
         <TaskContext.Provider value={{ tasks, move, handleStatus }}>
-            
+            <TypeSelect 
+                types = {taskStatus}
+                selected = {selectedStatus}
+                changeType = {setSelectedStatus}
+            />
+
+            <div className="Tasks">
+                <div className="Tasks-box">
+                    {tasks.lenght > 0 ? (
+                        tasks
+                            .filter(
+                                task =>
+                                    task.closed === selectedStatus.value ||
+                                    selectedStatus.value === -1
+                            )
+                            .map((task, index) => (
+                                <Task key={task.id} index={index} task={task} />
+                            ))
+                    ) : (
+                        <div className="Task">No Tasks</div>
+                    )}
+                </div>
+            </div>
+            <div className="Task">
+                <input 
+                    value={input}
+                    onChange={e => setInput(e.target.value)}
+                    placeholder="New Task"
+                />
+                <span onClick={addTask}>{'Add'}</span>    
+            </div>
         </TaskContext.Provider>
-    )
-}
+    );
+};
+
+export default memo(TaskList);
