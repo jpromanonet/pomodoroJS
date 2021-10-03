@@ -26,7 +26,7 @@ export default function Task({ task, index }){
                 const draggedTop = draggedOffset.y - targetSize.top;
                 
                 if(dragged.order < target.order && draggedTop < targetCenter) return;
-                if(dragged.order < target.order && draggedTop < targetCenter) return;
+                if(dragged.order > target.order && draggedTop > targetCenter) return;
 
                 move(item.index, index);
                 item.index = index;
