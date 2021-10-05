@@ -4,7 +4,7 @@ import TaskContext from './context';
 import Task from '../Task';
 import TypeSelect from '../../TypeSelect';
 
-import './styles.css';
+import './style.css';
 
 const TaskList = ({ selectedTaskType }) => {
     const [input, setInput] = useState('');

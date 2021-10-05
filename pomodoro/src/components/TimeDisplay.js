@@ -7,7 +7,7 @@ const TimeDisplay = ({ time, status, progress}) => {
 
     const radius = 150;
     const stroke = 5;
-    const normalizeRadius = radius - stroke * 2;
+    const normalizedRadius = radius - stroke * 2;
     const circumference = normalizedRadius * 2 * Math.PI;
     const strokeDashoffset = circumference - (progress / 100) * circumference;
 
@@ -25,3 +25,5 @@ const TimeDisplay = ({ time, status, progress}) => {
         </div>
     )
 }
+
+export default TimeDisplay;

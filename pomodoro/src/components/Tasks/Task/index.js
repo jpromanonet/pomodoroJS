@@ -1,8 +1,8 @@
-import React, { useRef, useContext } from 'React';
+import React, { useRef, useContext } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
-import './styles.css';
+import './style.css';
 
-import TaskContent from '../TaskList/context';
+import TaskContext from '../TaskList/context';
 
 export default function Task({ task, index }){
     const ref = useRef();
@@ -10,7 +10,7 @@ export default function Task({ task, index }){
     const [{ isDragging }, dragRef] = useDrag({
         item: { type: 'TASK', id:task.id, index },
         collect: monitor => ({
-            isDragging: monitor.isDragging();
+            isDragging: monitor.isDragging(),
         })
     });
 

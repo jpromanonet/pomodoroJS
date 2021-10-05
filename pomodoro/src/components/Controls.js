@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import '.Controls.css';
+import './Controls.css';
 
 const Controls = ({ start, reset, pause, status}) => (
     <div className="Controls">

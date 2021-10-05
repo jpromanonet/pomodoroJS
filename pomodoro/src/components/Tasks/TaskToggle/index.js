@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import '.styles.css';
+import './style.css';
 
 const TaskToggle = ({ task, toggleTask}) => (
     <button
