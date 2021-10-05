@@ -24,10 +24,6 @@
 }
 
 .TypeSelect button:first-child {
-    border-radius: 5px 0 0 px;
-}
-
-.TypeSelect button:first-child {
     border-radius: 5px 0 0 5px;
 }
 

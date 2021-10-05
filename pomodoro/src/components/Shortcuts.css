@@ -7,7 +7,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .Shortcuts{
+    .Shortcuts {
         display: none;
     }
 }
@@ -23,7 +23,7 @@
     opacity: 1;
 }
 
-.Shortcuts:hover .Shortcuts-box{
+.Shortcuts:hover .Shortcuts-box {
     opacity: 1;
     visibility: visible;
 }
@@ -73,7 +73,7 @@
     background-color: #f4f4f4;
     border: 1px solid #ccc;
     border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(0,0,0, .1), inset 0 0 0 1px #fff;
+    box-shadow: 0 1px 0 rgba(0,0,0,.1), inset 0 0 0 1px #fff;
     color: #333;
     font-size: 11px;
     margin: 0 .15em;

@@ -27,8 +27,7 @@
 }
 
 .Controls button.start:hover {
-    background: #D9534F;
-    color: #fff;
+    background: #b64441;
 }
 
 .Controls button.reset {
@@ -48,7 +47,7 @@
 }
 
 .Controls button.pause:hover {
-    background: #d3912f;    
+    background: #d3912f;
 }
 
 .Controls button.resume {
