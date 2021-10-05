@@ -79,5 +79,101 @@ class Pomodoro extends Component {
         this.setState({interval:null});
     };
 
-    
+    startTimer = () => {
+        this.setState(state => ({
+            running: true,
+            interval: setInterval(this.tick, 1000),
+            time: state.time > 0 ? state.time : state.selectedType.time
+        }));
+        this.sound.pause();
+        this.sound.currentTime = 0;
+    };
+
+    resetTimer = () => {
+        this.stopInterval();
+        this.setState(state => ({
+            time: state.selectedType.time,
+            running: false
+        }));
+    };
+
+    pauseTimer = () => {
+        this.state.interval ? this.stopInterval() : this.startTimer();
+    }
+
+    getStatus = () => {
+        const {time, running, interval } = this.state;
+        if (time === 0) return 'Finished';
+        if (running && !interval) return 'Paused';
+        if (running) return 'Running';
+    }
+
+    getProgress = () => {
+        const current = this.state.time;
+        const total = this.state.selectedType.time;
+        return((total - current) / total) * 100;
+    }
+
+    handleToggleSound = () => {
+        this.setState(
+            this.setState(
+                state => ({
+                    sound: !state.sound
+                }),
+                () => {
+                    window.localStorage.setItem('pomodoro-react-sound', this.state.sound);
+                }
+            )
+        );
+    };
+
+    handleToggleTask = () => {
+        this.setState(
+            state => ({
+                taskStatus: !state.taskStatus
+            }),
+            () => {
+                window.localStorage.setItem(
+                    'pomodoro-react-taskStatus',
+                    this.state.taskStatus
+                );
+            }
+        );
+    };
+
+    render() {
+        const { time, selectedType, sound, taskStatus } = this.state;
+        const { types } = this.props;
+
+        return (
+            <div className="Content">
+                <div className="Pomodoro">
+                    <TypeSelect 
+                        types={types}
+                        selected={selectedType}
+                        changeType={this.changeType}
+                    />
+                    <TimeDisplay 
+                        time={time}
+                        status={this.getStatus()}
+                        progress={this.getProgress()}
+                    />
+                    <Controls 
+                        start={this.startTimer}
+                        reset={this.resetTimer}
+                        pause={this.pauseTimer}
+                        status={this.getStatus()}
+                    />
+                    <ToggleTask task={taskStatus} toggleTask={this.handleToggleTask} />
+                    <Shortcuts />
+                    <ToggleSound sound={sound} toggleSound={this.handleToggleSound} />
+                </div>
+                {taskStatus && (
+                    <div className="TaskPainel">
+                        <TaskList />
+                    </div>
+                )}
+            </div>
+        );
+    }
 }
