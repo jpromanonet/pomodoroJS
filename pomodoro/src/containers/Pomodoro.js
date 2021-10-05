@@ -26,7 +26,7 @@ class Pomodoro extends Component {
 
   static defaultProps = {
     types: [
-      { name: 'Pomodoro', time: 1500 },
+      { name: 'Nucbadoro', time: 1500 },
       { name: 'Short Break', time: 300 },
       { name: 'Long Break', time: 900 }
     ]

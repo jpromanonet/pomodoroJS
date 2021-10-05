@@ -3,7 +3,7 @@ import { formatTime } from '../helpers';
 import './TimeDisplay.css';
 
 const TimeDisplay = ({ time, status, progress }) => {
-  document.title = `(${formatTime(time)}) Pomodoro`;
+  document.title = `(${formatTime(time)}) Nucbadoro`;
 
   const radius = 150;
   const stroke = 5;
