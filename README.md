@@ -1,2 +1,2 @@
-# nucbadoro
-El pomodoro nucba style =) aca vamos a dejar los codiguitos.
+#Pomodoro
+Simple pomodoro en JS, aca vamos a dejar los codiguitos.
